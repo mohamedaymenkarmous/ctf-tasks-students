@@ -1,0 +1,32 @@
+version: '3'
+
+services:
+#  web_php_nginx_mysql:
+#    container_name: web_php_nginx_mysql
+#    build: ./base/web_php_nginx_mysql
+#    image: web_php_nginx_mysql:latest
+#    working_dir: /root/task
+#    stdin_open: true
+#    tty: true
+#    dns:
+#        - 8.8.8.8
+#        - 1.1.1.1
+  2020web13:
+    container_name: 2020web13
+#    image: ctf-tasks_2020web5
+    build: ./2020/web/13
+#    depends_on: [ web_php_nginx_mysql ]
+    environment:
+      - NODE_ENV=development
+      - PORT=8813
+    ports:
+      - '8813:80'
+    working_dir: /root/task
+#    cap_drop:
+#      - ALL
+    stdin_open: true
+    tty: true
+    dns:
+        - 8.8.8.8
+        - 1.1.1.1
+

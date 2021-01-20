@@ -1,0 +1,122 @@
+version: '3'
+
+services:
+#  web_php_nginx_mysql:
+#    container_name: web_php_nginx_mysql
+#    build: ./base/web_php_nginx_mysql
+#    image: web_php_nginx_mysql:latest
+#    working_dir: /root/task
+#    stdin_open: true
+#    tty: true
+#    dns:
+#        - 8.8.8.8
+#        - 1.1.1.1
+  2020web12:
+    container_name: 2020web12
+#    image: ctf-tasks_2020web5
+    build: ./2020/web/12
+#    depends_on: [ web_php_nginx_mysql ]
+    environment:
+      - NODE_ENV=development
+      - PORT=8812
+    ports:
+      - '8812:80'
+    working_dir: /root/task
+#    cap_drop:
+#      - ALL
+    stdin_open: true
+    tty: true
+    dns:
+        - 8.8.8.8
+        - 1.1.1.1
+  2020web11:
+    container_name: 2020web11
+#    image: ctf-tasks_2020web5
+    build: ./2020/web/11
+#    depends_on: [ web_php_nginx_mysql ]
+    environment:
+      - NODE_ENV=development
+      - PORT=8811
+    ports:
+      - '8811:80'
+    working_dir: /root/task
+#    cap_drop:
+#      - ALL
+    stdin_open: true
+    tty: true
+    dns:
+        - 8.8.8.8
+        - 1.1.1.1
+  2020web10:
+    container_name: 2020web10
+#    image: ctf-tasks_2020web5
+    build: ./2020/web/10
+#    depends_on: [ web_php_nginx_mysql ]
+    environment:
+      - NODE_ENV=development
+      - PORT=8810
+    ports:
+      - '8810:80'
+    working_dir: /root/task
+#    cap_drop:
+#      - ALL
+    stdin_open: true
+    tty: true
+    dns:
+        - 8.8.8.8
+        - 1.1.1.1
+  2020web9:
+    container_name: 2020web9
+#    image: ctf-tasks_2020web5
+    build: ./2020/web/9
+#    depends_on: [ web_php_nginx_mysql ]
+    environment:
+      - NODE_ENV=development
+      - PORT=8809
+    ports:
+      - '8809:80'
+    working_dir: /root/task
+    stdin_open: true
+    tty: true
+    dns:
+        - 8.8.8.8
+        - 1.1.1.1
+  2020web8:
+    container_name: 2020web8
+#    image: ctf-tasks_2020web5
+    build: ./2020/web/8
+#    depends_on: [ web_php_nginx_mysql ]
+    environment:
+      - NODE_ENV=development
+      - PORT=8808
+    ports:
+      - '8808:80'
+    working_dir: /root/task
+    stdin_open: true
+    tty: true
+    dns:
+        - 8.8.8.8
+        - 1.1.1.1
+  2020web5:
+    container_name: 2020web5
+    build: ./2020/web/5
+#    depends_on: [ web_php_nginx_mysql ]
+    environment:
+      - NODE_ENV=development
+      - PORT=8805
+    ports:
+      - '8805:80'
+    working_dir: /root/task
+    stdin_open: true
+    tty: true
+    dns:
+        - 8.8.8.8
+        - 1.1.1.1
+#    deploy:
+#      resources:
+#        limits:
+#          cpus: '0.1'
+#          memory: 100M
+#        reservations:
+#          cpus: '0.1'
+#          memory: 100M
