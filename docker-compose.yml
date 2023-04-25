@@ -11,98 +11,81 @@ services:
 #    dns:
 #        - 8.8.8.8
 #        - 1.1.1.1
-  2020web12:
-    container_name: 2020web12
-#    image: ctf-tasks_2020web5
-    build: ./2020/web/12
-#    depends_on: [ web_php_nginx_mysql ]
+
+# Source code
+  demo2:
+    container_name: demo2
+    build: ./2022/web/2
     environment:
-      - NODE_ENV=development
-      - PORT=8812
+      - PORT=8802
     ports:
-      - '8812:80'
-    working_dir: /root/task
-#    cap_drop:
-#      - ALL
-    stdin_open: true
-    tty: true
-    dns:
-        - 8.8.8.8
-        - 1.1.1.1
-  2020web11:
-    container_name: 2020web11
-#    image: ctf-tasks_2020web5
-    build: ./2020/web/11
-#    depends_on: [ web_php_nginx_mysql ]
-    environment:
-      - NODE_ENV=development
-      - PORT=8811
-    ports:
-      - '8811:80'
-    working_dir: /root/task
-#    cap_drop:
-#      - ALL
-    stdin_open: true
-    tty: true
-    dns:
-        - 8.8.8.8
-        - 1.1.1.1
-  2020web10:
-    container_name: 2020web10
-#    image: ctf-tasks_2020web5
-    build: ./2020/web/10
-#    depends_on: [ web_php_nginx_mysql ]
-    environment:
-      - NODE_ENV=development
-      - PORT=8810
-    ports:
-      - '8810:80'
-    working_dir: /root/task
-#    cap_drop:
-#      - ALL
-    stdin_open: true
-    tty: true
-    dns:
-        - 8.8.8.8
-        - 1.1.1.1
-  2020web9:
-    container_name: 2020web9
-#    image: ctf-tasks_2020web5
-    build: ./2020/web/9
-#    depends_on: [ web_php_nginx_mysql ]
-    environment:
-      - NODE_ENV=development
-      - PORT=8809
-    ports:
-      - '8809:80'
+      - '8802:80'
     working_dir: /root/task
     stdin_open: true
     tty: true
     dns:
         - 8.8.8.8
         - 1.1.1.1
-  2020web8:
-    container_name: 2020web8
-#    image: ctf-tasks_2020web5
-    build: ./2020/web/8
-#    depends_on: [ web_php_nginx_mysql ]
+    deploy:
+      resources:
+        limits:
+          cpus: '0.01'
+          memory: 30M
+        reservations:
+          cpus: '0.01'
+          memory: 30M
+
+# Javascript
+  demo3:
+    container_name: demo3
+    build: ./2022/web/3
     environment:
-      - NODE_ENV=development
-      - PORT=8808
+      - PORT=8803
     ports:
-      - '8808:80'
+      - '8803:80'
     working_dir: /root/task
     stdin_open: true
     tty: true
     dns:
         - 8.8.8.8
         - 1.1.1.1
-  2020web5:
-    container_name: 2020web5
-    build: ./2020/web/5
-#    depends_on: [ web_php_nginx_mysql ]
+    deploy:
+      resources:
+        limits:
+          cpus: '0.01'
+          memory: 30M
+        reservations:
+          cpus: '0.01'
+          memory: 30M
+
+# XSS
+  demo4:
+    container_name: demo4
+    build: ./2022/web/4
     environment:
-      - NODE_ENV=development
+      - PORT=8804
+    ports:
+      - '8804:80'
+    working_dir: /root/task
+    stdin_open: true
+    tty: true
+    dns:
+        - 8.8.8.8
+        - 1.1.1.1
+    deploy:
+      resources:
+        limits:
+          cpus: '0.01'
+          memory: 30M
+        reservations:
+          cpus: '0.01'
+          memory: 30M
+
+# Javascript 3
+  demo5:
+    container_name: demo5
+    build: ./2022/web/5
+    environment:
       - PORT=8805
     ports:
       - '8805:80'
@@ -112,11 +95,104 @@ services:
     dns:
         - 8.8.8.8
         - 1.1.1.1
-#    deploy:
-#      resources:
-#        limits:
-#          cpus: '0.1'
-#          memory: 100M
-#        reservations:
-#          cpus: '0.1'
-#          memory: 100M
+    deploy:
+      resources:
+        limits:
+          cpus: '0.01'
+          memory: 30M
+        reservations:
+          cpus: '0.01'
+          memory: 30M
+
+# Cookies
+  demo6:
+    container_name: demo6
+    build: ./2022/web/6
+    environment:
+      - PORT=8806
+    ports:
+      - '8806:80'
+    working_dir: /root/task
+    stdin_open: true
+    tty: true
+    dns:
+        - 8.8.8.8
+        - 1.1.1.1
+    deploy:
+      resources:
+        limits:
+          cpus: '0.01'
+          memory: 30M
+        reservations:
+          cpus: '0.01'
+          memory: 30M
+
+# Session
+  demo7:
+    container_name: demo7
+    build: ./2022/web/7
+    environment:
+      - PORT=8807
+    ports:
+      - '8807:80'
+    working_dir: /root/task
+    stdin_open: true
+    tty: true
+    dns:
+        - 8.8.8.8
+        - 1.1.1.1
+    deploy:
+      resources:
+        limits:
+          cpus: '0.01'
+          memory: 30M
+        reservations:
+          cpus: '0.01'
+          memory: 30M
+
+# LFI
+  demo8:
+    container_name: demo8
+    build: ./2022/web/8
+    environment:
+      - PORT=8808
+    ports:
+      - '8808:80'
+    working_dir: /root/task
+    stdin_open: true
+    tty: true
+    dns:
+        - 8.8.8.8
+        - 1.1.1.1
+    deploy:
+      resources:
+        limits:
+          cpus: '0.01'
+          memory: 30M
+        reservations:
+          cpus: '0.01'
+          memory: 30M
+
+# Session
+  demo11:
+    container_name: demo11
+    build: ./2022/web/11
+    environment:
+      - PORT=8811
+    ports:
+      - '8811:80'
+    working_dir: /root/task
+    stdin_open: true
+    tty: true
+    dns:
+        - 8.8.8.8
+        - 1.1.1.1
+    deploy:
+      resources:
+        limits:
+          cpus: '0.1'
+          memory: 100M
+        reservations:
+          cpus: '0.1'
+          memory: 100M
+
